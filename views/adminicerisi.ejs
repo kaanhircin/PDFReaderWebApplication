@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yönetici Paneli</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body style="background-color:#343a40;">
+    <div class="container">
+        <p class="h2 text-center">Yönetici Paneli</p>
+        <form action="/adminicerisi" method="post">
+            <div class="preview text-center">
+            
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <label style="color: white; width: 30ch; position: absolute; margin-top: 10px;">Yeni bir kullanıcı eklemek için kullanıcı adı ve şifre giriniz.</label>
+                <input style="width: 30ch; position: absolute; margin-top: 63px;" class="form-control" type="text" name="addkullanc" required placeholder="Kullanıcı adı"/>
+                <input style="width: 30ch; position: absolute; margin-top: 100px;" class="form-control" type="text" name="addsifre" required placeholder="Şifre"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-outline-success float-left login_btn" style="width: 30ch; background-color:black;  position: absolute; margin-top: 145px;" type="submit" value="Kaydet"/>
+            </div>
+        </form>    
+        <form action="/adminicerisi" method="post">
+            <div class="form-group">
+                <label style="color: white; position: absolute; margin-left: 450px; margin-top: 10px;">Kullanıcı güncellemek için mevcut kullanıcı adınızı,<br> yeni kullanıcı adını ve şifresini giriniz.</label>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 63px;" class="form-control" type="text" name="guncadi1" required placeholder="Mevcut Kullanıcı Adı"/>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 100px;"class="form-control" type="text" name="guncadi2" required placeholder="Yeni Kullanıcı Adı"/>
+                <input style="position: absolute; width: 30ch; margin-left: 450px; margin-top: 135px;" class="form-control" type="text" name="guncsifre" required placeholder="Yeni Şifre"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:black; position: absolute; width: 30ch; margin-left: 450px; margin-top: 180px;" class="btn btn-outline-success btn-block" type="submit" value="Güncelle"/>
+            </div>
+        </form>  
+        <form action="/adminicerisi" method="post">  
+            <div class="form-group">
+                <label style="color: white; position: absolute; width: 30ch; margin-left: 950px; margin-top: 10px;">Silmek istediğiniz kullanıcının adını giriniz.</label>
+                <input style="position: absolute; width: 30ch; margin-left: 950px; margin-top: 63px;" class="form-control" type="text" name="kullanicisil" required placeholder="Kullanici adı"/>
+                <span class="Error"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:black; position: absolute; width: 30ch; margin-left: 950px; margin-top: 105px;" class="btn btn-outline-success btn-block" type="submit" value="Sil"/>
+            </div>
+            <div class="form-group">
+                <a style="background-color:black; padding: 20px; position: absolute; width: 30ch; margin-left: 450px; margin-top: 300px;" class="btn btn-outline-success btn-block" href="/adminsorgular">Sorgu</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

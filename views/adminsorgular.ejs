@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Yönetici Sorgu Paneli</title>
+</head>
+
+<body style="background-color:#343a40;">
+    <H1 style="font-family: 'Times New Roman', Times, serif; color: #fff; text-align: center;">YÖNETİCİ SORGU PANELİ</H1>
+    <form action="/adminsorgular" method="post">
+        <div class="container" style="position: relative; top: 100px; right: 200px; padding: 50px;">
+            <div class="main">
+                <div class="main-center">
+                    
+                    <form class="" method="post" action="#">
+
+                        <div class="form-group">
+                            <label for="name" style="color: white;">YÜKLEYEN</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Yukleyen" id="Yukleyen" style="margin-right: 850px
+                                ;"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" style="color: white;">YAZAR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Tez_Sahibi" id="Tez_Sahibi" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" style="color: white;">TÜR</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Ders_adi" style="margin-right: 850px
+                                ;"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" style="color: white;">ÖZET</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_ozeti" style="margin-right: 850px
+                                ;"
+                                    />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" style="color: white;">DÖNEM</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_donemi" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">BAŞLIK</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_konusu" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">ANAHTAR KELİMELER:</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_anahtar" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">DANIŞMAN</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_danisman" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm" style="color: white;">JÜRİ ÜYELERİ</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" name="Proje_juri" style="margin-right: 850px
+                                ;"
+                                     />
+                            </div>
+                        </div>
+
+                        <input type="submit" name="btn" value="Sorgular"
+                            class="btn btn-outline-success login_btn" style="background-color: black; margin-left: 60px; margin-top: 10px; padding: 10px;">
+
+                    </form>
+                </div>
+                <!--main-center"-->
+            </div>
+            <!--main-->
+        </div>
+        <!--container-->
+    </form>
+    <div class="container" style="position: absolute; top: 100px; left: 300px; padding: 50px;">
+        <table class="table table-hower" style="border: #fff; border-style: solid; border-collapse: separate;">
+            <thead>
+                <tr>
+                    <th style="color: white;">YÜKLEYEN</th>
+                    <th style="color: white;">PDF</th>
+                    <th style="color: white;">YAZAR</th>
+                    <th style="color: white;">KONU</th>
+                    <th style="color: white;">TÜR</th>
+                    <th style="color: white;">ÖZET</th>
+                    <th style="color: white;">DÖNEM</th>
+                    <th style="color: white;">ANAHTAR </th>
+                    <th style="color: white;">DANIŞMAN</th>
+                    <th style="color: white;">JÜRİLER</th>
+                </tr>
+            </thead>
+            <tbody">
+                <% for(var i=0;i<bilgiler.length;i++){%>
+                    <tr style="color: white;">
+                        <th>
+                            <%=bilgiler[i].kullanicisi%>
+                        </th> 
+                        <th>
+                                <%=bilgiler[i].pdf%>
+                            </th>
+                        <th>
+                            <%=bilgiler[i].yazan%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].konusu%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].adi%>
+                        </th>
+                        <th style="font-size: small;">
+                            <%=bilgiler[i].ozeti%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].donemi%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].anahtari%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].danismani%>
+                        </th>
+                        <th>
+                            <%=bilgiler[i].jurileri%>
+                        </th>
+                    </tr>
+                    <%}%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

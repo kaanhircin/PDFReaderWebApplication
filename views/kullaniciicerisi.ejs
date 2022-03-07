@@ -1,0 +1,109 @@
+<! DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>PDF Paneli</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    </head>
+    <style>
+        .file {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        body {
+            color: #FFFFFF;
+            font-family: 'League Gothic', Impact, sans-serif;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.5em;
+            text-align: center;
+            height: 300px;
+            line-height: 100px;
+            margin: 100px;
+            width: 50%;
+            background-color:#343a40;
+        }
+
+        .container {
+            background-color:#343a40;
+            padding: 40px 80px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0 0 5rem 0;
+            background: #343a40;
+            text-align: center;
+        }
+
+        .btn.btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+            outline: none;
+            color: #fff;
+        }
+
+    </style>
+
+    <body>
+        <h1 style="font-family: 'Times New Roman', Times, serif; color: #fff; margin-left: 550px;">PDF Paneli</h1>
+        <form action="/kullaniciicerisi" method="post" enctype="multipart/form-data">
+            <div class="container" style="position: absolute; margin-right: 600px; margin-top: 5px;">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                           
+                        </div>
+                        <div style="font-size: inherit;" class="input-group-append">
+                            <input style="font-size: inherit; padding: 1px; margin-left: 10px; width: 120px;" class="browse input-group-text btn btn-secondary" type="file" name="file_pdf" id="file_pdf">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative; margin-left: 600px; margin-top: 50px; padding: 5px;" class="container">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-append" style="width: 50px;">
+                            <button style="position:absolute; border: solid black; border-radius: 5px;" type="submit">İçe Aktar</button>
+                        </div>
+                        <div style="margin: 0px 100px;" class="input-group-append">
+                            <a href="/hocasorgular" style="border-radius: 5px; box-sizing: border-box; background-color: white; color: black; margin-left: 400px; margin-bottom: 100px; text-decoration-line: none;">Görüntüle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+            $(document).on("click", ".browse", function () {
+                var file = $(this)
+                    .parent()
+                    .parent()
+                    .parent()
+                    .find(".file");
+                file.trigger("click");
+            });
+            $(document).on("change", ".file", function () {
+                $(this)
+                    .parent()
+                    .find(".form-control")
+                    .val(
+                        $(this)
+                            .val()
+                            .replace(/C:\\path\\/i, "")
+                    );
+            });  
+        </script>
+    </body>
+
+    </html>
